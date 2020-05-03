@@ -56,8 +56,7 @@ async function executor(args) {
   const url = "http://"+args[2];
   const operation = args[3];
   if (!Object.keys(opMethods).includes(operation)) {
-    console.error("Invalid operation: ", operation);
-    return;
+    throw "Invalid operation: "+ operation;
   }
   const key = args[4];
   const value = args[5];
